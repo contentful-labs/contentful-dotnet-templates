@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Robert Linde",
+    "classifications": [ "Contentful", "Web" ],
+    "identity": "Contentful.Mvc",
+    "name": "Contentful MVC Application",
+    "shortName": "contentfulmvc",
+    "preferNameDirectory": true,
+    "sourceName": "ContentfulTemplateMvc",
+    "symbols": {
+        "accessToken": {
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "<accesstoken>",
+            "isRequired": true,
+            "description": "The Content Delivery API key"
+        },
+        "previewToken": {
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "<previewtoken>",
+            "description": "The Content Preview API key"
+        },
+        "spaceId": {
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "<space_id>",
+            "isRequired": true,
+            "description": "The space id"
+        }
+    },
+    "sources": [
+        {
+            "exclude": [
+                "**/[Bb]in/**",
+                "**/[Oo]bj/**",
+                ".template.config/**/*",
+                "**/*.filelist",
+                "**/*.user",
+                "**/*.lock.json",
+                "**/.vs/**"
+            ]
+        }
+    ]
+  }

@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Welcome to the Contentful template!</h1>
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Your entries</h2>
+        <p>
+            You have a total of @Model.Entries.Total entries in your space.
+        </p>
+    </div>
+    <div class="col-md-3">
+        <h2>Assets</h2>
+        <p>
+            You have a total of @Model.Assets.Total assets in your space of which @Model.ImageAssets.Total are images.
+        </p>
+    </div>
+    <div class="col-md-3">
+        @if(Model.ImageAssets == null || Model.ImageAssets.Total == 0)
+        {
+            <h2>You have no images!</h2>
+        }else {
+            <h2>This is the first image:</h2>
+            <contentful-image asset="@Model.ImageAssets.First()" class="img-responsive" ></contentful-image>
+        }
+    </div>
+</div>
